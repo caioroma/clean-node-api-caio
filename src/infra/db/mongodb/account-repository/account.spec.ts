@@ -1,7 +1,5 @@
-import { Console } from 'console'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { AccountMongoRepository } from './account'
-import { MongoMemoryServer } from 'mongodb-memory-server'
 
 describe('Account Mongo Repository', () => {
   beforeAll(async () => {
@@ -13,8 +11,8 @@ describe('Account Mongo Repository', () => {
   })
 
   beforeEach(async () => {
-    const accountCollection = MongoHelper.getCollection('accounts')
-    accountCollection.deleteMany({})
+    const accountCollection = await MongoHelper.getCollection('accounts')
+    await accountCollection.deleteMany({})
   })
 
   const makeSut = (): AccountMongoRepository => {
