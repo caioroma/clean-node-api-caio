@@ -2,7 +2,7 @@ import { Controller, HttpRequest, HttpResponse } from "../../presentation/protoc
 import { LogControllerDecorator } from "./log"
 import { serverError, ok } from '../../presentation/helpers/http/http-helpers'
 import { resolve } from "path"
-import { LogErrorRepository } from "../../data/protocols/log-error-repository"
+import { LogErrorRepository } from "../../data/protocols/db/log-error-repository"
 import { AccountModel } from "../../domain/models/account"
 
 const makeFakeRequest = (): HttpRequest => ({
